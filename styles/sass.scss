@@ -1,0 +1,71 @@
+$colors: (
+	purple: #9356DC,
+	pink: #FF79DA,
+	mint:  #99E2D0,);
+
+
+@each $color, $hex in $colors {
+	.btn--#{$color} {
+		background-color: $hex;
+	}
+}
+
+
+/*GLOBAL*/
+
+*{
+	box-sizing: border-box;
+
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2em;
+
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+/*HEADER*/
+
+/*MAIN*/
+
+section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+}
+	article>img{
+		max-height: 200px;
+		width: 100%;
+		object-fit: cover;
+}	
+}
+
+
+
+/*FOOTER*/
+
+footer{
+	background-color: grey;
+}
+
+nav{
+	padding: 10px;
+	.nav__link{
+		color: white;
+		.nav__link{
+			&:hover{
+				color: #99E2D0;
+		}
+		}
+	}
+}
