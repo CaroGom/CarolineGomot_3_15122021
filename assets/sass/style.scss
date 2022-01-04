@@ -1,0 +1,93 @@
+/*VARIABLES*/
+
+$colors: (
+	maincolor: #9356DC,
+	color2: #FF79DA,
+	color3:  #99E2D0,
+	color4: #f6f6f6);
+
+
+@each $color, $hex in $colors {
+	.btn--#{$color} {
+		background-color: $hex;
+	}
+}
+
+@mixin box-shadow{
+	box-shadow: 10px 10px 20px black;
+}
+
+
+/*GLOBAL*/
+
+*{
+	box-sizing: border-box;
+
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2em;
+
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+/*HEADER*/
+
+/*MAIN*/
+
+.fonctionnement{
+	&__li{
+	background: #f6f6f6;
+	padding: 15px;
+	@include box-shadow;
+		&:hover{
+		background: #f5edff;
+		}
+	}
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+		&article{
+			border-radius: 20px;
+			@include box-shadow;
+				&img{
+				max-height: 200px;
+				width: 100%;
+				object-fit: cover;
+
+				}
+	
+
+}
+	
+
+
+
+/*FOOTER*/
+
+footer{
+	background-color: grey;
+		&nav{
+	padding: 10px;
+	&__link{
+		color: white;
+			&:hover{
+				color: #99E2D0;
+		}
+		}
+	}
+}}
+
+
