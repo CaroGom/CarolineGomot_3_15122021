@@ -1,0 +1,165 @@
+/*CSS test for sass
+C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sass --watch C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass\style.scss:C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\css\style.css*/
+/*maincolor purple, color 2 pink color 3 green color 4 grey*/
+/*FONTS*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand");
+/*FAIRE UN MIXIN GREY BACKGROUND ?*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  margin: auto;
+}
+
+/*Container*/
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h3 {
+  font-style: normal;
+  padding: 10px;
+  font-size: 2em;
+}
+
+h4 {
+  padding: 0px;
+  margin: 0px;
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+/*HEADER*/
+header img {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  display: block;
+  padding: 15px;
+}
+
+.chapeau {
+  background-color: #f6f6f6;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.chapeau input {
+  padding: 15px;
+  background-color: #eaeaea;
+  text-align: center;
+  border-style: hidden;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+.chapeau :focus {
+  border-style: hidden;
+}
+.chapeau h1 {
+  padding: 50px;
+  padding-bottom: 10px;
+}
+.chapeau h2 {
+  padding: 50px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  font-weight: 100;
+}
+.chapeau button {
+  padding: 20px;
+  margin: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: #FF79DA;
+  border-style: hidden;
+  color: white;
+  box-shadow: inset -13px -11px 21px 14px rgba(174, 95, 219, 0.6);
+}
+
+/*FONCTIONALITES*/
+.fonctionnement {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.fonctionnement__li {
+  padding: 30px;
+  margin: 10px;
+  margin-bottom: 25px;
+  background-color: #f6f6f6;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}
+.fonctionnement__li:hover {
+  background-color: #f5edff;
+}
+.fonctionnement h1 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+/*RESTAURANTS*/
+.restaurant {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #f6f6f6;
+}
+.restaurant img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.restaurant article {
+  background-color: white;
+  border-radius: 10px;
+  margin: 25px;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}
+.restaurant div {
+  padding: 15px;
+}
+
+/*FOOTER*/
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 25px;
+}
+footer a {
+  font-family: "Shrikhand", sans-serif;
+  color: white;
+}
+
+nav li {
+  padding: 10px;
+  padding-bottom: 0px;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

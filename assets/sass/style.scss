@@ -1,24 +1,55 @@
-/*VARIABLES*/
+/*CSS test for sass
+C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sass --watch C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass\style.scss:C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\css\style.css*/
 
-$colors: (
-	maincolor: #9356DC,
-	color2: #FF79DA,
-	color3:  #99E2D0,
-	color4: #f6f6f6);
+/*maincolor purple, color 2 pink color 3 green color 4 grey*/
 
 
-@each $color, $hex in $colors {
-	.btn--#{$color} {
-		background-color: $hex;
-	}
+	$mainColor: #9356DC;
+	$color2: #FF79DA;
+	$color3:  #99E2D0;
+	$color4: #f6f6f6;
+	$color5: #eaeaea;
+
+
+@mixin googleFonts($font){
+	@import url('https://fonts.googleapis.com/css2?family=#{$font}');
+}
+
+/*FONTS*/
+@include googleFonts('Roboto');
+@include googleFonts('Shrikhand');
+
+@mixin chapeauTitlePadding{
+	padding: 50px;
+	padding-bottom: 10px;
 }
 
 @mixin box-shadow{
-	box-shadow: 10px 10px 20px black;
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
+}
+
+@mixin centerBlock{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin noPaddingNoMargin{
+	padding: 0px;
+	margin: 0px;
+}
+
+@mixin border-radius($corner){
+	border-radius: $corner;
+}
+
+@mixin articleBorderRadius($imgCorner){
+	border-top-left-radius: $imgCorner;
+	border-top-right-radius: $imgCorner;
 }
 
 
-/*GLOBAL*/
+/*FAIRE UN MIXIN GREY BACKGROUND ?*/
+
 
 *{
 	box-sizing: border-box;
@@ -32,7 +63,15 @@ html{
 body{
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.2em;
+	margin: auto;
 
+}
+
+/*Container*/
+
+.container{
+	width: 100%;
+  	@include centerBlock;
 }
 
 ul{
@@ -40,54 +79,149 @@ ul{
 	padding: 0;
 }
 
+a{
+	color: black;
+	text-decoration: none;
+}
+
+
+
+h3{
+	font-style: normal;
+	padding: 10px;
+	font-size: 2em;
+}
+
+h4{
+	@include noPaddingNoMargin;
+
+}
+
+p{
+	@include noPaddingNoMargin;
+}
+
 /*HEADER*/
 
-/*MAIN*/
+
+header {
+	img {
+	@include centerBlock;
+	max-width: 50%;
+	display: block;
+	padding: 15px;
+}
+}
+
+.chapeau{
+	background-color: $color4;
+	text-align: center;
+	padding-bottom: 20px;
+		input{
+		padding: 15px;
+		background-color: $color5;
+		text-align: center;
+		border-style: hidden;
+		width: 100%;
+		font-family: 'Roboto', sans-serif;
+		}
+			& :focus{
+				border-style: hidden;
+			}
+		h1{
+		@include chapeauTitlePadding;
+		}
+		h2{
+		@include chapeauTitlePadding;
+		padding-top: 0px;
+		font-weight: 100;
+		}
+		button{
+		padding: 20px;
+		margin:  15px;
+		font-family: 'Roboto', sans-serif;
+		font-weight: bold;
+		@include border-radius(30px);
+		background-color: $color2;
+		border-style: hidden;
+		color: white;
+		box-shadow: inset -13px -11px 21px 14px rgba(174,95,219,0.6);
+		}
+
+
+}
+
+
+
+/*FONCTIONALITES*/
 
 .fonctionnement{
+	margin-top: 30px;
+	margin-bottom: 30px;
 	&__li{
-	background: #f6f6f6;
-	padding: 15px;
+	padding :30px;
+	margin: 10px;
+	margin-bottom: 25px;
+	background-color: $color4;
+	@include border-radius(30px);
+	font-weight: bold;
 	@include box-shadow;
-		&:hover{
-		background: #f5edff;
-		}
 	}
+		&__li:hover{
+		background-color: #f5edff;
+		}
+		h1{
+		@include centerBlock;
+		padding: 10px;
+		}
 }
 
-section{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-		&article{
-			border-radius: 20px;
-			@include box-shadow;
-				&img{
-				max-height: 200px;
-				width: 100%;
-				object-fit: cover;
+ 
 
-				}
-	
+/*RESTAURANTS*/
 
+.restaurant{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background-color: $color4;
+	img{
+	max-height: 200px;
+	width: 100%;
+	object-fit: cover;
+	@include articleBorderRadius(10px);
+	}
+	article{
+	background-color: white;
+	@include border-radius(10px);
+	margin: 25px;
+	@include box-shadow;
+	}
+		& div{
+		padding: 15px;
+		}
 }
-	
+
 
 
 
 /*FOOTER*/
 
 footer{
-	background-color: grey;
-		&nav{
-	padding: 10px;
-	&__link{
-		color: white;
-			&:hover{
-				color: #99E2D0;
-		}
-		}
+	background-color: #353535;
+	color: white;
+	padding: 25px;
+	a{
+	font-family: 'Shrikhand', sans-serif;
+	color: white;
 	}
-}}
+}
 
+
+nav {
+	li{
+	padding: 10px;
+	padding-bottom: 0px;
+	color: white;
+	}
+}
 
