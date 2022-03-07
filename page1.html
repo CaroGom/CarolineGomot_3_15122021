@@ -8,12 +8,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	
-	<link rel="stylesheet" href="styles/style.css"/>
+	
 	<!--Imports police-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Shrikhand&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="assets/css/style.css"/>
 	<title>Ohmyfood</title>
+
 
 </head>
 
@@ -22,37 +24,91 @@
 
 	<header>
 		<a href="index.html">
-			<img src="img/logo/ohmyfood.png">
+			<div class="homebutton"></div>
+			<img src="assets/img/logo/ohmyfood.png">
 		</a>
 	</header>
 
 	<main>
 
 		<div class="entete">
-			<img src="img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg">
+			<img src="assets/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="A la Française">
 		</div>
 
-		<section>
+		<section class="restaurantmenu">
 			<!--Police 2-->
 			<h1>A la française</h1>
 			<h2>Entrées</h2>
 			<!--Form checkbox-->
-				<form method="post" action="traitement.php">
-					<p>
+				<form method="post">
+					<fieldset>
 						<input type="checkbox" name="tartarepoulpe" id="tartarepoulpe">
 						<label for="tartarepoulpe">
 							<span class="titreplat">Tartare de poulpe acidulé</span>
 							<span class="remarquesplat">Aux zestes d'orange</span>
 							<p class="prix">25€</p>
 						</label>
-						<label for
+						<input type="checkbox" name="veloutelegumes" id="veloutelegumes">
+						<label for="veloutelegumes">
+							<span class="titreplat">Velouté de Légumes d'Antan</span>
+							<span class="remarquesplat">Carottes, panais, topinambour</span>
+							<p class="prix">35€</p>
+						</label>
+						<input type="checkbox" name="soupeoignon" id="soupeoignon">
+						<label for="soupeoignon">
+							<span class="titreplat">Soupe à l'oignon</span>
+							<span class="remarquesplat">Revisitée</span>
+							<p class="prix">20€</p>
+						</label>
+					</fieldset>
 
 			<h2>Plats</h2>
 			<!--Form checkbox-->
+					<fieldset>
+						<input type="checkbox" name="coquillesstjacques" id="coquillesstjacques">
+						<label for="coquillesstjacques">
+							<span class="titreplat">Coquille Saint-Jacques</span>
+							<span class="remarquesplat">Accompagnées d'une purée de panais</span>
+							<p class="prix">40€</p>
+						</label>
+						<input type="checkbox" name="magretcanard" id="magretcanard">
+						<label for="magretcanard">
+							<span class="titreplat">Magret de canard</span>
+							<span class="remarquesplat">Et parmentier de pommes de terre</span>
+							<p class="prix">35€</p>
+						</label>
+						<input type="checkbox" name="pigeonneau" id="pigeonneau">
+						<label for="pigeonneau">
+							<span class="titreplat">Pigeoneau d'Ille-et-Villaine</span>
+							<span class="remarquesplat">Sur son lit de gnocchis aux légumes</span>
+							<p class="prix">44€</p>
+						</label>
+					</fieldset>
 			<h2>Desserts</h2>
 			<!--Form checkbox-->
-
-			<button>Commander</button>
+					<fieldset>
+						<input type="checkbox" name="violette" id="violette">
+						<label for="violette">
+							<span class="titreplat">Pétales de violette glacés</span>
+							<span class="remarquesplat">Et purée de noisettes</span>
+							<p class="prix">18€</p>
+						</label>
+						<input type="checkbox" name="fondantchoco" id="fondantchoco">
+						<label for="fondantchoco">
+							<span class="titreplat">Fondant au chocolat</span>
+							<span class="remarquesplat">Revisité</span>
+							<legend class="prix">22€</legend>
+						</label>
+						<input type="checkbox" name="millefeuille" id="millefeuille">
+						<label for="millefeuille">
+							<span class="titreplat">Millefeuille croustillant</span>
+							<span class="remarquesplat">Myrtilles et pâte d'amande</span>
+							<legend class="prix">23€</legend>
+						</label>
+					</fieldset>
+					<button type="submit">Commander</button>
+				</form>
+			
 		</section>
 	</main>
 
@@ -80,3 +136,7 @@
 		</nav>
 
 	</footer>
+
+</body>
+
+</html>

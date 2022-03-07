@@ -27,6 +27,11 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 1.2em;
+  margin: auto;
+}
+
+.container {
+  width: 500px;
 }
 
 ul {
@@ -36,40 +41,41 @@ ul {
 
 /*HEADER*/
 /*MAIN*/
+.chapeau {
+  background: #f6f6f6;
+  text-align: center;
+}
+
 .fonctionnement__li {
   background: #f6f6f6;
   padding: 15px;
+  margin: 15px;
   box-shadow: 10px 10px 20px black;
 }
 .fonctionnement__li:hover {
   background: #f5edff;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /*FOOTER*/
-}
-sectionarticle {
+.restaurant __article {
   border-radius: 20px;
+  max-height: 400px;
   box-shadow: 10px 10px 20px black;
 }
-sectionarticleimg {
-  max-height: 200px;
-  width: 100%;
-  object-fit: cover;
+.restaurant __article__img {
+  max-height: 300px;
 }
-section footer {
+
+/*FOOTER*/
+footer {
   background-color: grey;
 }
-section footernav {
+footernav {
   padding: 10px;
 }
-section footernav__link {
+footernav__link {
   color: white;
 }
-section footernav__link:hover {
+footernav__link:hover {
   color: #99E2D0;
 }
 

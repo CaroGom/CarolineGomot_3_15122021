@@ -4,9 +4,30 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 /*FONTS*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand");
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+  }
+  @keyframes heartfill {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      background-color: #ff79da;
+      box-shadow: inset 21px 14px -13px -11px rgba(174, 95, 219, 0.6);
+    }
+  }
+}
 /*FAIRE UN MIXIN GREY BACKGROUND ?*/
 * {
   box-sizing: border-box;
+  transition: all 450ms;
 }
 
 html {
@@ -17,6 +38,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.2em;
   margin: auto;
+  transition: 3000ms;
 }
 
 /*Container*/
@@ -52,6 +74,37 @@ p {
   margin: 0px;
 }
 
+.bodyanim {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: #9356dc;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  animation: loader 1000ms 4000ms ease-in-out forwards;
+}
+.bodyanim p {
+  color: white;
+  text-align: center;
+  font-family: "Shrikhand";
+  font-size: 5em;
+  padding: 0 50 50px;
+  margin: auto;
+}
+.bodyanim p .load1 {
+  animation: loader 1000ms 4000ms ease-in-out;
+  animation-delay: 0.1s;
+}
+.bodyanim p .load2 {
+  animation: loader 1000ms 4000ms ease-in-out;
+  animation-delay: 0.5s;
+}
+.bodyanim p .load3 {
+  animation: loader 1000ms 4000ms ease-in-out;
+  animation-delay: 0.9s;
+}
+
 /*HEADER*/
 header img {
   margin-left: auto;
@@ -66,6 +119,9 @@ header img {
   text-align: center;
   padding-bottom: 20px;
 }
+.chapeau label {
+  display: none;
+}
 .chapeau input {
   padding: 15px;
   background-color: #eaeaea;
@@ -74,29 +130,39 @@ header img {
   width: 100%;
   font-family: "Roboto", sans-serif;
 }
-.chapeau :focus {
-  border-style: hidden;
+.chapeau input:focus {
+  border: 2px solid #9356dc;
 }
-.chapeau h1 {
+
+h1 {
   padding: 50px;
   padding-bottom: 10px;
 }
-.chapeau h2 {
+
+h2 {
   padding: 50px;
   padding-bottom: 10px;
   padding-top: 0px;
   font-weight: 100;
 }
-.chapeau button {
+
+button {
   padding: 20px;
   margin: 15px;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
+  transform: scale(1);
+  transition: transform 500ms;
   border-radius: 30px;
-  background-color: #FF79DA;
+  background-color: #ff79da;
   border-style: hidden;
   color: white;
   box-shadow: inset -13px -11px 21px 14px rgba(174, 95, 219, 0.6);
+}
+button:hover {
+  transform: scale(1.01);
+  background-color: #ff79da;
+  box-shadow: inset 21px 14px 21px 14px rgba(174, 95, 219, 0.6);
 }
 
 /*FONCTIONALITES*/
@@ -104,17 +170,49 @@ header img {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+.fonctionnement ul {
+  display: flex;
+  flex-wrap: wrap;
+}
 .fonctionnement__li {
+  display: flex;
+  flex-basis: 100%;
   padding: 30px;
-  margin: 10px;
+  margin: 20px;
   margin-bottom: 25px;
   background-color: #f6f6f6;
+  transform: scale(1);
+  transition: transform 500ms;
+  transition: transform 400ms;
   border-radius: 30px;
   font-weight: bold;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
 }
+.fonctionnement h3 {
+  flex-basis: 100%;
+}
+.fonctionnement__number {
+  border-radius: 20px;
+  width: 20px;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  background-color: #9356dc;
+  margin-left: -35px;
+}
+.fonctionnement__icon {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.fonctionnement__text {
+  margin: auto;
+}
 .fonctionnement__li:hover {
   background-color: #f5edff;
+  transform: scale(1.01);
+}
+.fonctionnement__li:hover svg {
+  color: #9356dc;
 }
 .fonctionnement h1 {
   margin-left: auto;
@@ -124,25 +222,75 @@ header img {
 
 /*RESTAURANTS*/
 .restaurant {
+  display: flex;
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: #f6f6f6;
+  transform: scale(1);
+  transition: transform 500ms;
+  flex-wrap: wrap;
 }
-.restaurant img {
-  max-height: 200px;
-  width: 100%;
-  object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.restaurant a {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  justify-content: space-between;
 }
 .restaurant article {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
   background-color: white;
   border-radius: 10px;
   margin: 25px;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
 }
-.restaurant div {
+.restaurant article:hover {
+  transform: scale(1.01);
+  transition: all 400ms;
+}
+.restaurant img {
+  max-height: 200px;
+  width: 100%;
+  flex-basis: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.restaurant .restaurant__bottomtext {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
   padding: 15px;
+}
+.restaurant .restaurant__bottomtext .heartbutton {
+  position: relative;
+  padding: 5px;
+}
+.restaurant .restaurant__bottomtext .heartbutton svg {
+  position: absolute;
+  display: inline-flex;
+  top: 0;
+  left: 0;
+}
+.restaurant .restaurant__bottomtext .heartbutton :first-child {
+  z-index: 1;
+  font-weight: bold;
+}
+.restaurant .restaurant__bottomtext .heartbutton :nth-child(2) {
+  z-index: 99;
+  color: rgba(147, 86, 220, 0);
+  font-size: 1em;
+}
+.restaurant .restaurant__bottomtext .heartbutton:hover svg :first-child {
+  opacity: 0;
+}
+.restaurant .restaurant__bottomtext .heartbutton:hover svg:nth-child(2) {
+  opacity: 1;
+  color: red;
+  background: -webkit-linear-gradient(272deg, #9356dc 0%, #ff79da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*FOOTER*/
@@ -152,14 +300,29 @@ footer {
   padding: 25px;
 }
 footer a {
+  color: white;
+}
+footer h5 {
   font-family: "Shrikhand", sans-serif;
   color: white;
+  font-size: 1em;
+}
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 nav li {
-  padding: 10px;
-  padding-bottom: 0px;
+  padding-bottom: 5px;
   color: white;
+  font-family: "Roboto", sans-serif;
+  flex-basis: 100%;
+}
+nav li a {
+  display: flex;
+}
+nav li .nav__icon {
+  padding-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

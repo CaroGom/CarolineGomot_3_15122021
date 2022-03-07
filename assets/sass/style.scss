@@ -4,11 +4,14 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 /*maincolor purple, color 2 pink color 3 green color 4 grey*/
 
 
-	$mainColor: #9356DC;
-	$color2: #FF79DA;
-	$color3:  #99E2D0;
-	$color4: #f6f6f6;
+	$mainColor: rgba(147,86,220,1);
+	$color2: rgba(255,121,218,1);
+	$color3: rgba(153,226,208,1);
+	$color4: rgba(246,246,246,1);
 	$color5: #eaeaea;
+	$loadAnimation-dur: 3000ms;
+	$loadAnimation-delay: 450ms;
+	$loadAnimationHide: $loadAnimation-dur + $loadAnimation-delay;
 
 
 @mixin googleFonts($font){
@@ -19,10 +22,7 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 @include googleFonts('Roboto');
 @include googleFonts('Shrikhand');
 
-@mixin chapeauTitlePadding{
-	padding: 50px;
-	padding-bottom: 10px;
-}
+
 
 @mixin box-shadow{
 	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
@@ -47,12 +47,41 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 	border-top-right-radius: $imgCorner;
 }
 
+@mixin hoverAnimationBigger{
+		transform: scale(1);
+		transition: transform 500ms;
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+ }
+
+ @keyframes heartfill{
+ 	0%{
+ 		opacity: 0;
+ 	}
+ 	100%{
+ 		opacity: 1;
+ 		background-color: $color2;
+ 		box-shadow: inset 21px 14px -13px -11px rgba(174,95,219,0.6);
+ 	}
+ }
+
+}
+
 
 /*FAIRE UN MIXIN GREY BACKGROUND ?*/
 
 
 *{
 	box-sizing: border-box;
+	transition: all 450ms;
 
 }
 
@@ -64,6 +93,9 @@ body{
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.2em;
 	margin: auto;
+	transition: 3000ms;
+	
+
 
 }
 
@@ -101,6 +133,40 @@ p{
 	@include noPaddingNoMargin;
 }
 
+
+.bodyanim{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	background-color: $mainColor;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	animation: loader 1000ms 4000ms ease-in-out forwards;
+	& p{
+
+	color: white;
+	text-align: center;
+	font-family: 'Shrikhand';
+	font-size: 5em;
+	padding: 0 50 50px;
+	margin: auto;
+		& .load1{
+			animation: loader 1000ms 4000ms ease-in-out;
+			animation-delay: .1s;
+		}
+		& .load2{
+			animation: loader 1000ms 4000ms ease-in-out;
+			animation-delay: .5s;
+		}
+		& .load3{
+			animation: loader 1000ms 4000ms ease-in-out;
+			animation-delay: .9s;
+		}
+
+}
+
+}
 /*HEADER*/
 
 
@@ -117,6 +183,9 @@ header {
 	background-color: $color4;
 	text-align: center;
 	padding-bottom: 20px;
+		label{
+		display: none;
+		}
 		input{
 		padding: 15px;
 		background-color: $color5;
@@ -124,15 +193,18 @@ header {
 		border-style: hidden;
 		width: 100%;
 		font-family: 'Roboto', sans-serif;
-		}
-			& :focus{
-				border-style: hidden;
+				&:focus{
+				border: 2px solid $mainColor;
+				}
 			}
+		}
 		h1{
-		@include chapeauTitlePadding;
+		padding: 50px;
+		padding-bottom: 10px;
 		}
 		h2{
-		@include chapeauTitlePadding;
+		padding: 50px;
+		padding-bottom: 10px;
 		padding-top: 0px;
 		font-weight: 100;
 		}
@@ -141,15 +213,22 @@ header {
 		margin:  15px;
 		font-family: 'Roboto', sans-serif;
 		font-weight: bold;
+		@include hoverAnimationBigger;
 		@include border-radius(30px);
 		background-color: $color2;
 		border-style: hidden;
 		color: white;
 		box-shadow: inset -13px -11px 21px 14px rgba(174,95,219,0.6);
-		}
+			&:hover{
+			transform: scale(1.01);
+			background-color: $color2;
+			box-shadow: inset 21px 14px 21px 14px rgba(174,95,219,0.6);
+			}
+			}
 
 
-}
+
+
 
 
 
@@ -158,20 +237,51 @@ header {
 .fonctionnement{
 	margin-top: 30px;
 	margin-bottom: 30px;
-	&__li{
-	padding :30px;
-	margin: 10px;
-	margin-bottom: 25px;
-	background-color: $color4;
-	@include border-radius(30px);
-	font-weight: bold;
-	@include box-shadow;
+	ul{
+		display: flex;
+		flex-wrap: wrap;
 	}
+		&__li{
+			display: flex;
+			flex-basis: 100%;
+		padding :30px;
+		margin: 20px;
+		margin-bottom: 25px;
+		background-color: $color4;
+		@include hoverAnimationBigger;
+		transition: transform 400ms;
+		@include border-radius(30px);
+		font-weight: bold;
+		@include box-shadow;
+		}
+			& h3{
+			flex-basis: 100%;
+			}
+			&__number{
+			border-radius: 20px;
+			width: 20px;
+			color: white;
+			text-align: center;
+			padding:5px;
+			background-color: $mainColor;
+			margin-left: -35px;
+			}
+			&__icon{
+			margin-left:10px;
+			margin-top: 5px;
+			}
+			&__text{
+			margin:auto;
+			}
 		&__li:hover{
 		background-color: #f5edff;
+		transform: scale(1.01);
+			& svg{
+				color: $mainColor;
+		}
 		}
 		h1{
-		@include centerBlock;
+		@include centerBlock; 
 		padding: 10px;
 		}
 }
@@ -181,24 +291,87 @@ header {
 /*RESTAURANTS*/
 
 .restaurant{
+	display: flex;
 	padding-top: 25px;
 	padding-bottom: 25px;
 	background-color: $color4;
-	img{
-	max-height: 200px;
-	width: 100%;
-	object-fit: cover;
-	@include articleBorderRadius(10px);
-	}
-	article{
-	background-color: white;
-	@include border-radius(10px);
-	margin: 25px;
-	@include box-shadow;
-	}
-		& div{
-		padding: 15px;
+	@include hoverAnimationBigger;
+	flex-wrap: wrap;
+
+		a{
+		display: flex;
+		flex-wrap: wrap;
+		flex-basis: 100%;
+		justify-content: space-between;
 		}
+		& article{
+		display: flex;
+		justify-content: space-between;
+		flex-basis: 100%;
+		background-color: white;
+		@include border-radius(10px);
+		margin: 25px;
+		@include box-shadow;
+		&:hover{
+		transform: scale(1.01);
+		transition: all 400ms;
+		}
+	}
+		& img{
+		max-height: 200px;
+		width: 100%;
+		flex-basis: 100%;
+
+		object-fit: cover;
+		@include articleBorderRadius(10px);
+	}
+
+		& .restaurant__bottomtext{
+			display: flex;
+			flex-basis: 100%;
+			justify-content: space-between;
+			padding: 15px;
+		& .heartbutton{
+			position: relative;
+			padding: 5px;
+			& svg{
+				position: absolute;
+				display: inline-flex;
+				top:0;
+				left:0;
+			}
+				& :first-child{
+				z-index: 1;
+				font-weight: bold;
+
+				}
+				& :nth-child(2){
+				z-index: 99;
+				color: rgba(147,86,220,0);
+				font-size: 1em;
+				
+				
+				}
+
+			&:hover{
+				& svg{
+					& :first-child{
+						opacity: 0;
+					}
+					&:nth-child(2){
+						opacity: 1;
+						color: red;
+						background: -webkit-linear-gradient(272deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
+
+			}
+
+		}
+	}
+
 }
 
 
@@ -211,17 +384,32 @@ footer{
 	color: white;
 	padding: 25px;
 	a{
+		color: white;
+	}
+	h5{
 	font-family: 'Shrikhand', sans-serif;
 	color: white;
+	font-size: 1em;
+	}
+	ul{
+		display: flex;
+		flex-wrap: wrap;
 	}
 }
 
 
 nav {
 	li{
-	padding: 10px;
-	padding-bottom: 0px;
+	padding-bottom: 5px;
 	color: white;
+	font-family: 'Roboto', sans-serif;
+	flex-basis: 100%;
+	& a{
+		display: flex;
+	}
+	& .nav__icon{
+		padding-right:5px;
+	}
 	}
 }
 
