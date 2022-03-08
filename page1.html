@@ -24,7 +24,9 @@
 
 	<header>
 		<a href="index.html">
-			<div class="homebutton"></div>
+			<div class="homebutton">
+				<i class="fa-solid fa-arrow-left"></i>
+			</div>
 			<img src="assets/img/logo/ohmyfood.png">
 		</a>
 	</header>
@@ -38,6 +40,10 @@
 		<section class="restaurantmenu">
 			<!--Police 2-->
 			<h1>A la française</h1>
+			<div class="heartbutton">
+							<i class="fa-regular fa-heart"></i>
+							<i class="fa-solid fa-heart"></i>
+			</div>
 			<h2>Entrées</h2>
 			<!--Form checkbox-->
 				<form method="post">
@@ -50,6 +56,7 @@
 						</label>
 						<input type="checkbox" name="veloutelegumes" id="veloutelegumes">
 						<label for="veloutelegumes">
+							
 							<span class="titreplat">Velouté de Légumes d'Antan</span>
 							<span class="remarquesplat">Carottes, panais, topinambour</span>
 							<p class="prix">35€</p>
@@ -114,22 +121,36 @@
 
 	<footer>
 		
-		<a href="#">
-			<img src="img/logo/ohmyfood.png">
+		<a href="index.html">
+			<img src="assets/img/logo/ohmyfood.png">
 		</a>
 
-		<nav>
+		<nav class="nav">
 			<ul>
-				<li>
-					<a href="#">Proposer un restaurant</a>
+				<li class="nav__link">
+					<a href="#">
+						<div class="nav__icon">
+							<i class="fa-solid fa-utensils"></i>
+						</div>
+						<div class ="nav__p">
+						Proposer un restaurant
+						</div>
+					</a>
 				</li>
-				<li>
-					<a href="#">Devenir partenaire</a>
+				<li class="nav__link">
+					<a href="#">
+						<div class="nav__icon">
+							<i class="fa-solid fa-handshake-angle"></i>
+						</div>
+						<div class ="nav__p">
+							Devenir partenaire
+						</div>
+					</a>
 				</li>
-				<li>
+				<li class="nav__link">
 					<a href="#">Mentions Légales</a>
 				</li>
-				<li>
+				<li class="nav__link">
 					<a href="#">Contact</a>
 				</li>
 			</ul>

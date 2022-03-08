@@ -285,7 +285,7 @@ button:hover {
 .restaurant .restaurant__bottomtext .heartbutton:hover svg :first-child {
   opacity: 0;
 }
-.restaurant .restaurant__bottomtext .heartbutton:hover svg:nth-child(2) {
+.restaurant .restaurant__bottomtext .heartbutton:hover svg :nth-child(2) {
   opacity: 1;
   color: red;
   background: -webkit-linear-gradient(272deg, #9356dc 0%, #ff79da 100%);
@@ -323,6 +323,74 @@ nav li a {
 }
 nav li .nav__icon {
   padding-right: 5px;
+}
+
+/*PAGE RESTAU*/
+.entete {
+  display: flex;
+}
+.entete img {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.restaurantmenu {
+  background-color: #eaeaea;
+  margin-top: -100px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+}
+.restaurantmenu h1 {
+  font-family: "Shrikhand", sans serif;
+  font-size: 1.8em;
+  padding-left: 15px;
+}
+.restaurantmenu h2 {
+  text-transform: uppercase;
+  font-size: 1em;
+  border-bottom: 1px solid #99e2d0;
+  flex-basis: 100%;
+}
+.restaurantmenu form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.restaurantmenu fieldset {
+  border-style: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.restaurantmenu fieldset input {
+  display: contents;
+}
+.restaurantmenu fieldset label {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+.restaurantmenu fieldset label .titreplat {
+  font-weight: bold;
+  font-size: 1.1em;
+  flex-basis: 100%;
+}
+.restaurantmenu fieldset label .remarquesplat {
+  padding-top: 5px;
+}
+.restaurantmenu fieldset label .prix {
+  font-weight: bold;
+}
+.restaurantmenu fieldset label button {
+  flex-basis: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -358,7 +358,7 @@ header {
 					& :first-child{
 						opacity: 0;
 					}
-					&:nth-child(2){
+					& :nth-child(2){
 						opacity: 1;
 						color: red;
 						background: -webkit-linear-gradient(272deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
@@ -410,6 +410,79 @@ nav {
 	& .nav__icon{
 		padding-right:5px;
 	}
+	}
+}
+
+
+/*PAGE RESTAU*/
+
+.entete{
+	display: flex;
+	& img{
+		max-height: 300px;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.restaurantmenu{
+	background-color: $color5;
+	margin-top: -100px;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	position: relative;
+	z-index: 10;
+	display: flex;
+	flex-wrap: wrap;
+
+
+	& h1{
+		font-family: 'Shrikhand', sans serif;
+		font-size: 1.8em;
+		padding-left: 15px;
+	}
+	& h2{
+		text-transform: uppercase;
+		font-size: 1em;
+		border-bottom: 1px solid $color3;
+		flex-basis: 100%;
+	}
+	& form {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	& fieldset{
+		border-style: hidden;
+		display: flex;
+		flex-wrap: wrap;
+		& input{
+			display: contents;
+		}
+		& label{
+			background-color: white;
+			border-radius: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: 100%;
+			padding: 15px;
+			margin-bottom: 25px;
+			& .titreplat{
+				font-weight: bold;
+				font-size: 1.1em;
+				flex-basis: 100%;
+			}
+			& .remarquesplat{
+				padding-top: 5px;
+			}
+			& .prix{
+				font-weight: bold;
+
+			}
+			& button{
+				flex-basis: 100%;
+			}
+		}
 	}
 }
 
