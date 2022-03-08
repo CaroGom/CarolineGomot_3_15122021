@@ -360,6 +360,10 @@ nav li .nav__icon {
   display: flex;
   flex-wrap: wrap;
 }
+.restaurantmenu form button {
+  flex-basis: 100%;
+  margin-bottom: 30px;
+}
 .restaurantmenu fieldset {
   border-style: hidden;
   display: flex;
@@ -388,9 +392,6 @@ nav li .nav__icon {
 }
 .restaurantmenu fieldset label .prix {
   font-weight: bold;
-}
-.restaurantmenu fieldset label button {
-  flex-basis: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -450,6 +450,10 @@ nav {
 	& form {
 		display: flex;
 		flex-wrap: wrap;
+		& button{
+			flex-basis: 100%;
+			margin-bottom: 30px;
+		}
 	}
 	& fieldset{
 		border-style: hidden;
@@ -479,9 +483,7 @@ nav {
 				font-weight: bold;
 
 			}
-			& button{
-				flex-basis: 100%;
-			}
+
 		}
 	}
 }
