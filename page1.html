@@ -6,7 +6,7 @@
 
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/js/all.min.js"></script>
 	
 	
 	<!--Imports police-->
@@ -21,9 +21,10 @@
 
 	
 <body>
+	<div class="restaurantfadein">
 
 	<header>
-		<a href="index.html">
+		<a class="restaurantchapeau" href="index.html">
 			<div class="homebutton">
 				<i class="fa-solid fa-arrow-left"></i>
 			</div>
@@ -39,33 +40,55 @@
 
 		<section class="restaurantmenu">
 			<!--Police 2-->
-			<h1>A la française</h1>
-			<div class="heartbutton">
+			<h1>A la française
+				<div class="heartbutton">
 							<i class="fa-regular fa-heart"></i>
 							<i class="fa-solid fa-heart"></i>
-			</div>
+				</div>
+			</h1>
+			
 			<h2>Entrées</h2>
 			<!--Form checkbox-->
 				<form method="post">
 					<fieldset>
 						<input type="checkbox" name="tartarepoulpe" id="tartarepoulpe">
-						<label for="tartarepoulpe">
-							<span class="titreplat">Tartare de poulpe acidulé</span>
-							<span class="remarquesplat">Aux zestes d'orange</span>
+						<label for="tartarepoulpe" class="load1">
+							<div>
+								<p class="titreplat">Tartare de poulpe acidulé</p>
+								<p class="remarquesplat">Aux zestes d'orange</p>
+							</div>
+							<div>
 							<p class="prix">25€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 						<input type="checkbox" name="veloutelegumes" id="veloutelegumes">
-						<label for="veloutelegumes">
-							
-							<span class="titreplat">Velouté de Légumes d'Antan</span>
-							<span class="remarquesplat">Carottes, panais, topinambour</span>
-							<p class="prix">35€</p>
+						<label for="veloutelegumes" class="load2">
+							<div>
+								<p class="titreplat">Velouté de Légumes d'Antan</p>
+								<p class="remarquesplat">Carottes, panais, topinambour</p>
+							</div>
+							<div>
+								<p class="prix">35€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 						<input type="checkbox" name="soupeoignon" id="soupeoignon">
-						<label for="soupeoignon">
-							<span class="titreplat">Soupe à l'oignon</span>
-							<span class="remarquesplat">Revisitée</span>
-							<p class="prix">20€</p>
+						<label for="soupeoignon" class="load3">
+							<div>
+								<p class="titreplat">Soupe à l'oignon</p>
+								<p class="remarquesplat">Revisitée</p>
+							</div>
+							<div>
+								<p class="prix">20€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 					</fieldset>
 
@@ -74,43 +97,86 @@
 					<fieldset>
 						<input type="checkbox" name="coquillesstjacques" id="coquillesstjacques">
 						<label for="coquillesstjacques">
-							<span class="titreplat">Coquille Saint-Jacques</span>
-							<span class="remarquesplat">Accompagnées d'une purée de panais</span>
-							<p class="prix">40€</p>
+							<div>
+							<p class="titreplat">Coquille Saint-Jacques</p>
+							<p class="remarquesplat">Accompagnées d'une purée de panais</p>
+							</div>
+							<div>
+								<p class="prix">40€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 						<input type="checkbox" name="magretcanard" id="magretcanard">
 						<label for="magretcanard">
-							<span class="titreplat">Magret de canard</span>
-							<span class="remarquesplat">Et parmentier de pommes de terre</span>
-							<p class="prix">35€</p>
+							<div>
+								<p class="titreplat">Magret de canard</p>
+								<p class="remarquesplat">Et parmentier de pommes de terre</p>
+							</div>
+							<div>
+								<p class="prix">35€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 						<input type="checkbox" name="pigeonneau" id="pigeonneau">
 						<label for="pigeonneau">
-							<span class="titreplat">Pigeoneau d'Ille-et-Villaine</span>
-							<span class="remarquesplat">Sur son lit de gnocchis aux légumes</span>
-							<p class="prix">44€</p>
+							<div>
+								<p class="titreplat">Pigeoneau d'Ille-et-Villaine</p>
+								<p class="remarquesplat">Sur son lit de gnocchis aux légumes</p>
+							</div>
+							<div>
+								<p class="prix">44€</p>			
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 					</fieldset>
+								
 			<h2>Desserts</h2>
 			<!--Form checkbox-->
 					<fieldset>
 						<input type="checkbox" name="violette" id="violette">
 						<label for="violette">
-							<span class="titreplat">Pétales de violette glacés</span>
-							<span class="remarquesplat">Et purée de noisettes</span>
-							<p class="prix">18€</p>
+							<div>
+								<p class="titreplat">Pétales de violette glacés</p>
+								<p class="remarquesplat">Et purée de noisettes</p>
+							</div>
+							<div>
+								<p class="prix">18€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 						<input type="checkbox" name="fondantchoco" id="fondantchoco">
 						<label for="fondantchoco">
-							<span class="titreplat">Fondant au chocolat</span>
-							<span class="remarquesplat">Revisité</span>
-							<legend class="prix">22€</legend>
+							<div>
+								<p class="titreplat">Fondant au chocolat</p>
+								<p class="remarquesplat">Revisité</p>
+							</div>
+							<div>
+								<p class="prix">22€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 						<input type="checkbox" name="millefeuille" id="millefeuille">
 						<label for="millefeuille">
-							<span class="titreplat">Millefeuille croustillant</span>
-							<span class="remarquesplat">Myrtilles et pâte d'amande</span>
-							<legend class="prix">23€</legend>
+							<div>
+								<p class="titreplat">Millefeuille croustillant</p>
+								<p class="remarquesplat">Myrtilles et pâte d'amande</p>
+							</div>
+							<div>
+								<p class="prix">23€</p>
+								<div class="checkmark">
+									<i class="fa-solid fa-circle-check"></i>
+								</div>
+							</div>
 						</label>
 					</fieldset>
 					<button type="submit">Commander</button>
@@ -118,6 +184,7 @@
 			
 		</section>
 	</main>
+</div>
 
 	<footer>
 		

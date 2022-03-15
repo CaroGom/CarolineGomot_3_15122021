@@ -4,6 +4,14 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 /*FONTS*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand");
+@keyframes restaurantappear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes loader {
   0% {
     opacity: 1;
@@ -13,14 +21,12 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
     height: 0;
     visibility: hidden;
   }
-  @keyframes heartfill {
+  @keyframes slide-out-left {
     0% {
-      opacity: 0;
+      transform: translateY(0, 0);
     }
     100% {
-      opacity: 1;
-      background-color: #ff79da;
-      box-shadow: inset 21px 14px -13px -11px rgba(174, 95, 219, 0.6);
+      transform: translateY(-100%, 0);
     }
   }
 }
@@ -274,23 +280,31 @@ button:hover {
   left: 0;
 }
 .restaurant .restaurant__bottomtext .heartbutton :first-child {
-  z-index: 1;
+  z-index: 99;
   font-weight: bold;
+  display: inline;
 }
 .restaurant .restaurant__bottomtext .heartbutton :nth-child(2) {
-  z-index: 99;
-  color: rgba(147, 86, 220, 0);
+  z-index: 1;
+  opacity: 0;
+  color: white;
   font-size: 1em;
+  display: inline;
 }
-.restaurant .restaurant__bottomtext .heartbutton:hover svg :first-child {
+.restaurant .restaurant__bottomtext .heartbutton:hover > svg:first-child {
   opacity: 0;
 }
-.restaurant .restaurant__bottomtext .heartbutton:hover svg :nth-child(2) {
+.restaurant .restaurant__bottomtext .heartbutton:hover > svg:nth-child(2) {
   opacity: 1;
-  color: red;
-  background: -webkit-linear-gradient(272deg, #9356dc 0%, #ff79da 100%);
+  color: #9356dc;
+  z-index: 99;
+}
+.restaurant .restaurant__bottomtext .heartbutton:active > svg:nth-child(2) {
+  opacity: 1;
+  background: linear-gradient(0deg, #9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 99;
 }
 
 /*FOOTER*/
@@ -326,11 +340,26 @@ nav li .nav__icon {
 }
 
 /*PAGE RESTAU*/
+.restaurantchapeau {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.homebutton {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding-left: 15px;
+}
+
 .entete {
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 }
 .entete img {
-  max-height: 300px;
+  max-height: 450px;
   width: 100%;
   object-fit: cover;
 }
@@ -342,37 +371,92 @@ nav li .nav__icon {
   border-top-left-radius: 20px;
   position: relative;
   z-index: 10;
-  display: flex;
-  flex-wrap: wrap;
+  padding-bottom: 15px;
 }
 .restaurantmenu h1 {
   font-family: "Shrikhand", sans serif;
   font-size: 1.8em;
   padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.restaurantmenu .heartbutton {
+  position: relative;
+  padding: 5px;
+  display: inline-block;
+}
+.restaurantmenu .heartbutton svg {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+}
+.restaurantmenu .heartbutton :first-child {
+  z-index: 99;
+  font-weight: bold;
+  display: inline-block;
+}
+.restaurantmenu .heartbutton :nth-child(2) {
+  z-index: 1;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  display: inline-block;
+}
+.restaurantmenu .heartbutton:hover > svg:first-child {
+  opacity: 1;
+  fill: url(#rg);
+}
+.restaurantmenu .heartbutton:hover > svg:nth-child(2) {
+  opacity: 1;
+  color: #9356dc;
+  z-index: 99;
+}
+.restaurantmenu .heartbutton:active > svg:nth-child(2) {
+  opacity: 1;
+  background-color: #f3ec78;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 100%;
+  background-clip: text;
+  color: transparent;
+  -moz-text-fill-color: transparent;
+  z-index: 99;
+}
+.restaurantmenu .heartbutton:visited > svg:nth-child(2) {
+  opacity: 1;
+  background-color: #f3ec78;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 100%;
+  background-clip: text;
+  color: transparent;
+  -moz-text-fill-color: transparent;
+  z-index: 99;
 }
 .restaurantmenu h2 {
   text-transform: uppercase;
   font-size: 1em;
   border-bottom: 1px solid #99e2d0;
   flex-basis: 100%;
+  padding-left: 15px;
 }
-.restaurantmenu form {
-  display: flex;
-  flex-wrap: wrap;
+.restaurantmenu button {
+  width: 200px;
+  margin: 0 auto 30px;
+  display: block;
 }
-.restaurantmenu form button {
-  flex-basis: 100%;
-  margin-bottom: 30px;
+.restaurantmenu .checkmark {
+  position: relative;
+  background-color: #99e2d0;
 }
 .restaurantmenu fieldset {
   border-style: hidden;
-  display: flex;
-  flex-wrap: wrap;
 }
 .restaurantmenu fieldset input {
   display: contents;
 }
 .restaurantmenu fieldset label {
+  animation: restaurantappear 4000ms ease-in-out forwards;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -392,6 +476,39 @@ nav li .nav__icon {
 }
 .restaurantmenu fieldset label .prix {
   font-weight: bold;
+}
+.restaurantmenu fieldset label div:nth-child(2) {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.restaurantmenu fieldset label .checkmark {
+  width: 0;
+}
+.restaurantmenu fieldset label .checkmark svg {
+  width: 0;
+}
+.restaurantmenu fieldset label .load1 {
+  animation-delay: 1s;
+}
+.restaurantmenu fieldset label .load2 {
+  animation-delay: 0.5s;
+}
+.restaurantmenu fieldset label:hover .prix {
+  margin-right: 25px;
+}
+.restaurantmenu fieldset label:hover .checkmark {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100px;
+  margin: -15px;
+  background-color: #99e2d0;
+}
+.restaurantmenu fieldset label:hover .checkmark svg {
+  width: auto;
+  margin: auto;
+  color: white;
+  padding: 35px;
 }
 
 /*# sourceMappingURL=style.css.map */
