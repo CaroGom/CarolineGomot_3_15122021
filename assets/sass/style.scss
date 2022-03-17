@@ -12,6 +12,9 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 	$loadAnimation-dur: 3000ms;
 	$loadAnimation-delay: 450ms;
 	$loadAnimationHide: $loadAnimation-dur + $loadAnimation-delay;
+	$breakpointmobile: 640px;
+	$breakpointtablet: 768px;
+	$breakpointdesktop: 1024px;
 
 
 @mixin googleFonts($font){
@@ -451,12 +454,14 @@ nav {
 .entete{
 	display: flex;
 	flex-wrap: wrap;
-	align-content: center;
+	align-items: center;
+	justify-content: space-between;
 	& img{
 		max-height: 450px;
 		width: 100%;
 		object-fit: cover;
 	}
+
 }
 
 .restaurantmenu{
@@ -478,7 +483,8 @@ nav {
 	}
 	& .heartbutton{
 			position: relative;
-			padding: 5px;
+			margin-top: 25px;
+			padding-right: 25px;
 			display: inline-block;
 			& svg{
 				position: absolute;
@@ -514,12 +520,7 @@ nav {
 					}
 			&:active > svg:nth-child(2){
 					opacity: 1;
-					background-color: #f3ec78;
-   					background-image: linear-gradient(45deg, #f3ec78, #af4261);
-   					background-size: 100%;
-    				background-clip: text;
-   					color: transparent; 
-    				-moz-text-fill-color: transparent;
+					color: $mainColor;
 					z-index: 99;
 				}
 			&:visited > svg:nth-child(2){
@@ -581,21 +582,21 @@ nav {
 			& .remarquesplat{
 				padding-top: 5px;
 			}
-			& .prix{
-				font-weight: bold;
-				
-			}
-			& div:nth-child(2){
+
+			& .blocprix{
 				display: flex;
 				justify-content: end;
 				align-items: center;
-			}
-			& .checkmark{
+				& .prix{
+				font-weight: bold;
+				}
+				& .checkmark{
+				transform-origin: 50% 0%;
+				transform: translateX(0);
 				width: 0;
-				& svg{
-					
+					& svg{
 					width: 0;
-
+					}
 				}
 			}
 
@@ -606,28 +607,58 @@ nav {
 				animation-delay: .5s;
 			}
 			&:hover{
-				& .prix{
+				& .blocprix{
+				margin-top: -15px;
+					& .prix{
 					margin-right: 25px;
-				}
-				& .checkmark{
-				border-top-right-radius: 10px;
-				border-bottom-right-radius: 10px;
-				width: 100px;
-				margin: -15px;;
-				background-color: $color3;
-				& svg{
-					width: auto;
-					margin: auto;
-					color: white;
-					padding: 35px;
+					}
+					& .checkmark{
+					transform: translateX(0px);
+					border-top-right-radius: 10px;
+					border-bottom-right-radius: 10px;
+					width: 100px;
+					margin: -17px;
+					padding: 27px;
+					padding-left: 45px;
+					background-color: $color3;
+						& svg{
+						width: auto;
+						margin: auto;
+						color: white;
+						
 
-				}
+						}
 
+					}
 				}
-				
 			}
 
+			&:active{
+				padding-left: 0;
 
+				& div:first-child{
+					opacity: 0;
+					width: 0;
+					height: 0;
+					& p{
+						width: 0;
+						margin: 0;
+					}
+				}
+				& .prix{
+					opacity: 0;
+					width: 0;
+					height: 0;
+				}
+				& .checkmark{
+					transform: translateX(4);
+					background-color: $color3;
+					width: 450px;
+					& svg{
+						transform: rotate(-1turn);
+					}
+				}
+			}
 
 
 		}

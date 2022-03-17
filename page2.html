@@ -6,7 +6,8 @@
 
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/js/all.min.js"></script>
+	
 	
 	
 	<!--Imports police-->
@@ -23,8 +24,11 @@
 <body>
 
 	<header>
-		<a href="index.html">
-			<img src="assets/img/logo/ohmyfood.png">
+		<a class="restaurantchapeau" href="index.html">
+			<div class="homebutton">
+				<i class="fa-solid fa-arrow-left"></i>
+			</div>
+			<img src="assets/img/logo/ohmyfood.png" alt="logo">
 		</a>
 	</header>
 
@@ -36,10 +40,13 @@
 
 		<section class="restaurantmenu">
 			<!--Police 2-->
-			<h1>La Note Enchantée</h1>
-			<div class="heartbutton">
-				<i class="fa-regular fa-heart"></i>
-				<i class="fa-solid fa-heart"></i>
+			<div class="entete">
+				<h1>La Note Enchantée</h1>
+						
+				<div class="heartbutton">
+							<i class="fa-regular fa-heart"></i>
+							<i class="fa-solid fa-heart"></i>
+				</div>
 			</div>
 			<h2>Entrées</h2>
 			<!--Form checkbox-->
@@ -47,27 +54,55 @@
 					<fieldset>
 						<input type="checkbox" name="raviolesfoiegras" id="raviolesfoiegras">
 						<label for="raviolesfoiegras">
-							<p class="titreplat">Ravioles de foie gras</p>
-							<p class="remarquesplat">Accompagnées de leur crème à la truffe</p>
-							<legend class="prix">25€</legend>
+							<span class="titreplat">Ravioles de foie gras</span>
+							<span class="remarquesplat">Accompagnées de leur crème à la truffe</span>
+							<span class= "blocprix">
+								<span class="prix">25€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="caviar" id="caviar">
 						<label for="caviar">
 							<span class="titreplat">Caviar osciètre</span>
 							<span class="remarquesplat">Sur blini à la farine de blé noir</span>
-							<legend class="prix">35€</legend>
+							<span class= "blocprix">
+								<span class="prix">35€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="homardpotiron" id="homardpotiron">
 						<label for="homardpotiron">
 							<span class="titreplat">Homard et espuma de potiron</span>
 							<span class="remarquesplat">Mariné aux zestes d'orange</span>
-							<legend class="prix">20€</legend>
+							<span class= "blocprix">
+								<span class="prix">20€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="foiegrasentier" id="foiegrasentier">
 						<label for="foiegrasentier">
 							<span class="titreplat">Foie gras de canard cuit en entier</span>
 							<span class="remarquesplat">Confiture de figues et pain toasté</span>
-							<legend class="prix">35€</legend>
+							<span class= "blocprix">
+								<span class="prix">35€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 					</fieldset>
 
@@ -78,19 +113,40 @@
 						<label for="noixstjacques">
 							<span class="titreplat">Noix de coquilles Saint-Jacques</span>
 							<span class="remarquesplat">Sur lit de purée de céleri-rave</span>
-							<legend class="prix">40€</legend>
+							<span class= "blocprix">
+							<span class="prix">40€</span>
+							<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="langoustinepoelee" id="langoustinepoelee">
 						<label for="langoustinepoelee">
 							<span class="titreplat">Langoustine poêlée</span>
 							<span class="remarquesplat">Purée de patate douce</span>
-							<legend class="prix">35€</legend>
+							<span class= "blocprix">
+								<span class="prix">35€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="queueboeuf" id="queueboeuf">
 						<label for="queueboeuf">
 							<span class="titreplat">Mijoté de queue de boeuf</span>
 							<span class="remarquesplat">Et riz sauvage aux zestes de citron</span>
-							<legend class="prix">44€</legend>
+							<span class= "blocprix">
+								<span class="prix">44€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 					</fieldset>
 			<h2>Desserts</h2>
@@ -100,19 +156,40 @@
 						<label for="macaronnoisettechoco">
 							<span class="titreplat">Macaron noisette et chocolat</span>
 							<span class="remarquesplat">Glace au carame brun et sel de Guérande</span>
-							<legend class="prix">18€</legend>
+							<span class= "blocprix">
+								<span class="prix">18€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="babarhum" id="babarhum">
 						<label for="babarhum">
 							<span class="titreplat">Baba au rhum revisité</span>
 							<span class="remarquesplat">Avec son coulis de citron</span>
-							<legend class="prix">22€</legend>
+							<span class= "blocprix">
+								<span class="prix">22€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="citronmeringue" id="citronmeringue">
 						<label for="citronmeringue">
 							<span class="titreplat">Tarte au citron meringuée</span>
 							<span class="remarquesplat">Destructurée</span>
-							<legend class="prix">23€</legend>
+							<span class= "blocprix">
+								<span class="prix">23€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 					</fieldset>
 					<button>Commander</button>
@@ -123,22 +200,38 @@
 
 	<footer>
 		
-		<a href="#">
-			<img src="assets/img/logo/ohmyfood.png">
+		<a href="index.html">
+			<h5>
+				ohmyfood
+			</h5>
 		</a>
 
-		<nav>
+		<nav class="nav">
 			<ul>
-				<li>
-					<a href="#">Proposer un restaurant</a>
+				<li class="nav__link">
+					<a href="#">
+						<div class="nav__icon">
+							<i class="fa-solid fa-utensils"></i>
+						</div>
+						<div class ="nav__p">
+						Proposer un restaurant
+						</div>
+					</a>
 				</li>
-				<li>
-					<a href="#">Devenir partenaire</a>
+				<li class="nav__link">
+					<a href="#">
+						<div class="nav__icon">
+							<i class="fa-solid fa-handshake-angle"></i>
+						</div>
+						<div class ="nav__p">
+							Devenir partenaire
+						</div>
+					</a>
 				</li>
-				<li>
+				<li class="nav__link">
 					<a href="#">Mentions Légales</a>
 				</li>
-				<li>
+				<li class="nav__link">
 					<a href="#">Contact</a>
 				</li>
 			</ul>

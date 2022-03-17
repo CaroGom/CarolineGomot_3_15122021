@@ -6,7 +6,7 @@
 
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/js/all.min.js"></script>
 	
 	<link rel="stylesheet" href="assets/css/style.css"/>
 	<!--Imports police-->
@@ -19,10 +19,14 @@
 
 	
 <body>
+	<div class="restaurantfadein">
 
 	<header>
-		<a href="index.html">
-			<img src="assets/img/logo/ohmyfood.png">
+		<a class="restaurantchapeau" href="index.html">
+			<div class="homebutton">
+				<i class="fa-solid fa-arrow-left"></i>
+			</div>
+			<img src="assets/img/logo/ohmyfood.png" alt="logo">
 		</a>
 	</header>
 
@@ -32,30 +36,57 @@
 			<img src="assets/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg">
 		</div>
 
-		<section>
+		<section class="restaurantmenu">
 			<!--Police 2-->
-			<h1>La palette du goût</h1>
+			<div class="entete">
+				<h1>A la palette du goût</h1>
+				<div class="heartbutton">
+							<i class="fa-regular fa-heart"></i>
+							<i class="fa-solid fa-heart"></i>
+				</div>
+			</div>
 			<h2>Entrées</h2>
 			<!--Form checkbox-->
-				<form method="post" action="traitement.php">
+				<form method="post">
 					<fieldset>
 						<input type="checkbox" name="fricasseeescargots" id="fricasseeescargots">
 						<label for="fricasseeescargots">
 							<span class="titreplat">Fricassée d'escargots</span>
 							<span class="remarquesplat">Au piment d'Espelette</span>
-							<legend class="prix">25€</legend>
+							<span class= "blocprix">
+								<span class="prix">25€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="foiegrasmicuit" id="foiegrasmicuit">
 						<label for="foiegrasmicuit">
 							<span class="titreplat">Foie gras de canard mi-cuit</span>
 							<span class="remarquesplat">Et ses copeaux de truffe noire</span>
-							<legend class="prix">35€</legend>
+							<span class= "blocprix">
+								<span class="prix">35€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="oeufplat" id="oeufplat">
 						<label for="oeufplat">
 							<span class="titreplat">Oeuf au plat</span>
 							<span class="remarquesplat">Assaisonné à la truffe sur lit de caviar</span>
-							<legend class="prix">20€</legend>
+							<span class= "blocprix">
+								<span class="prix">20€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 					
 					</fieldset>
@@ -67,66 +98,124 @@
 						<label for="filetboeufherbes">
 							<span class="titreplat">Filet de boeuf aux herbes</span>
 							<span class="remarquesplat">Accompagné de sa ribambelle de légumes</span>
-							<legend class="prix">40€</legend>
+							<span class= "blocprix">
+								<span class="prix">40€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="parmentierqueueboeuf" id="parmentierqueueboeuf">
 						<label for="parmentierqueueboeuf">
 							<span class="titreplat">Parmentier de queue de boeuf</span>
 							<span class="remarquesplat">A la truffe noire sur sa purée de panais</span>
-							<legend class="prix">35€</legend>
+							<span class= "blocprix">
+								<span class="prix">35€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="filetturbot" id="filetturbot">
 						<label for="filetturbot">
 							<span class="titreplat">Filet de turbot</span>
 							<span class="remarquesplat">Aux agrumes</span>
-							<legend class="prix">44€</legend>
+							<span class= "blocprix">
+								<span class="prix">44€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 					</fieldset>
 			<h2>Desserts</h2>
 			<!--Form checkbox-->
-					<p>
+					<fieldset>
 						<input type="checkbox" name="parisbrest" id="parisbrest">
 						<label for="parisbrest">
 							<span class="titreplat">Paris-Brest</span>
 							<span class="remarquesplat">Revisité</span>
-							<legend class="prix">18€</legend>
+							<span class= "blocprix">
+								<span class="prix">18€</span>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="macaronchoco" id="macaronchoco">
 						<label for="macaronchoco">
 							<span class="titreplat">Macaron au chocolat d'exception</span>
 							<span class="remarquesplat">Et glace à la vanille de Madagascar</span>
-							< class="prix">22€</p>
+							<span class= "blocprix">
+								<span class="prix">22€</p>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
 						<input type="checkbox" name="moussechoco" id="moussechoco">
 						<label for="moussechoco">
 							<span class="titreplat">Mousse au chocolat</span>
 							<span class="remarquesplat">Au piment d'Espelette et à la truffe noire</span>
-							<p class="prix">23€</p>
+							<span class= "blocprix">
+								<span class="prix">23€</p>
+								<span class="checkmark">
+									<span class="checkmark__hover">
+									<i class="fa-solid fa-circle-check"></i>
+									</span>
+								</span>
+							</span>
 						</label>
-					</p>
+					</fieldset>
 				</form>
 			<button>Commander</button>
 		</section>
 	</main>
 
-	<footer>
+		<footer>
 		
-		<a href="#">
-			<img src="assets/img/logo/ohmyfood.png">
+		<a href="index.html">
+			<h5>
+				ohmyfood
+			</h5>
 		</a>
 
-		<nav>
+		<nav class="nav">
 			<ul>
-				<li>
-					<a href="#">Proposer un restaurant</a>
+				<li class="nav__link">
+					<a href="#">
+						<div class="nav__icon">
+							<i class="fa-solid fa-utensils"></i>
+						</div>
+						<div class ="nav__p">
+						Proposer un restaurant
+						</div>
+					</a>
 				</li>
-				<li>
-					<a href="#">Devenir partenaire</a>
+				<li class="nav__link">
+					<a href="#">
+						<div class="nav__icon">
+							<i class="fa-solid fa-handshake-angle"></i>
+						</div>
+						<div class ="nav__p">
+							Devenir partenaire
+						</div>
+					</a>
 				</li>
-				<li>
+				<li class="nav__link">
 					<a href="#">Mentions Légales</a>
 				</li>
-				<li>
+				<li class="nav__link">
 					<a href="#">Contact</a>
 				</li>
 			</ul>

@@ -356,7 +356,8 @@ nav li .nav__icon {
 .entete {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
 .entete img {
   max-height: 450px;
@@ -382,7 +383,8 @@ nav li .nav__icon {
 }
 .restaurantmenu .heartbutton {
   position: relative;
-  padding: 5px;
+  margin-top: 25px;
+  padding-right: 25px;
   display: inline-block;
 }
 .restaurantmenu .heartbutton svg {
@@ -414,12 +416,7 @@ nav li .nav__icon {
 }
 .restaurantmenu .heartbutton:active > svg:nth-child(2) {
   opacity: 1;
-  background-color: #f3ec78;
-  background-image: linear-gradient(45deg, #f3ec78, #af4261);
-  background-size: 100%;
-  background-clip: text;
-  color: transparent;
-  -moz-text-fill-color: transparent;
+  color: #9356dc;
   z-index: 99;
 }
 .restaurantmenu .heartbutton:visited > svg:nth-child(2) {
@@ -474,18 +471,20 @@ nav li .nav__icon {
 .restaurantmenu fieldset label .remarquesplat {
   padding-top: 5px;
 }
-.restaurantmenu fieldset label .prix {
-  font-weight: bold;
-}
-.restaurantmenu fieldset label div:nth-child(2) {
+.restaurantmenu fieldset label .blocprix {
   display: flex;
   justify-content: end;
   align-items: center;
 }
-.restaurantmenu fieldset label .checkmark {
+.restaurantmenu fieldset label .blocprix .prix {
+  font-weight: bold;
+}
+.restaurantmenu fieldset label .blocprix .checkmark {
+  transform-origin: 50% 0%;
+  transform: translateX(0);
   width: 0;
 }
-.restaurantmenu fieldset label .checkmark svg {
+.restaurantmenu fieldset label .blocprix .checkmark svg {
   width: 0;
 }
 .restaurantmenu fieldset label .load1 {
@@ -494,21 +493,51 @@ nav li .nav__icon {
 .restaurantmenu fieldset label .load2 {
   animation-delay: 0.5s;
 }
-.restaurantmenu fieldset label:hover .prix {
+.restaurantmenu fieldset label:hover .blocprix {
+  margin-top: -15px;
+}
+.restaurantmenu fieldset label:hover .blocprix .prix {
   margin-right: 25px;
 }
-.restaurantmenu fieldset label:hover .checkmark {
+.restaurantmenu fieldset label:hover .blocprix .checkmark {
+  transform: translateX(0px);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   width: 100px;
-  margin: -15px;
+  margin: -17px;
+  padding: 27px;
+  padding-left: 45px;
   background-color: #99e2d0;
 }
-.restaurantmenu fieldset label:hover .checkmark svg {
+.restaurantmenu fieldset label:hover .blocprix .checkmark svg {
   width: auto;
   margin: auto;
   color: white;
-  padding: 35px;
+}
+.restaurantmenu fieldset label:active {
+  padding-left: 0;
+}
+.restaurantmenu fieldset label:active div:first-child {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.restaurantmenu fieldset label:active div:first-child p {
+  width: 0;
+  margin: 0;
+}
+.restaurantmenu fieldset label:active .prix {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.restaurantmenu fieldset label:active .checkmark {
+  transform: translateX(4);
+  background-color: #99e2d0;
+  width: 450px;
+}
+.restaurantmenu fieldset label:active .checkmark svg {
+  transform: rotate(-1turn);
 }
 
 /*# sourceMappingURL=style.css.map */
