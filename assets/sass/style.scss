@@ -510,14 +510,11 @@ nav {
 				
 				}
 
-			&:hover > svg:first-child{
-				
-				opacity: 1;
-				fill: url(#rg);
-					}
+
 			&:hover > svg:nth-child(2){
 						opacity: 1;
-						color: $mainColor;
+						transition: 2s linear;
+						color: $color2;
 						z-index: 99;
 						
 					}

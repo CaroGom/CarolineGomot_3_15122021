@@ -402,13 +402,10 @@ nav li .nav__icon {
   font-size: 1em;
   display: inline-block;
 }
-.restaurantmenu .heartbutton:hover > svg:first-child {
-  opacity: 1;
-  fill: url(#rg);
-}
 .restaurantmenu .heartbutton:hover > svg:nth-child(2) {
   opacity: 1;
-  color: #9356dc;
+  transition: 2s linear;
+  color: #ff79da;
   z-index: 99;
 }
 .restaurantmenu .heartbutton:active > svg:nth-child(2) {
