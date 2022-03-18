@@ -166,10 +166,10 @@ button {
   box-shadow: inset -13px -11px 21px 14px rgba(174, 95, 219, 0.6);
 }
 button:hover {
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
   transform: scale(1.01);
   background-color: #ff79da;
   box-shadow: inset 21px 14px 21px 14px rgba(174, 95, 219, 0.6);
-  box-shadow: 10px 10px 10px 10 px black;
 }
 
 /*FONCTIONALITES*/
@@ -297,7 +297,7 @@ button:hover {
 }
 .restaurant .restaurant__bottomtext .heartbutton:hover > svg:nth-child(2) {
   opacity: 1;
-  color: #9356dc;
+  color: #ff79da;
   z-index: 99;
 }
 .restaurant .restaurant__bottomtext .heartbutton:active > svg:nth-child(2) {
@@ -506,6 +506,43 @@ nav li .nav__icon {
   margin: auto;
   color: white;
   transform: rotate(-1turn);
+}
+
+@media (min-width: 640px) {
+  body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  body header {
+    flex-basis: 100%;
+  }
+  body main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  body main .chapeau {
+    flex-basis: 40%;
+    margin: 15px;
+  }
+  body main .fonctionnement {
+    flex-basis: 50%;
+  }
+  body footer {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main.chapeau {
+    flex-basis: 30%;
+  }
+  main .fonctionemment {
+    flex-basis: 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

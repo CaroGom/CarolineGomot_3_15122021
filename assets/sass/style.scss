@@ -27,6 +27,7 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 
 
 
+
 @mixin box-shadow{
 	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
 }
@@ -60,6 +61,7 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 	0%{
 		opacity: 0;
 	}
+
 	100%{
 		opacity: 1;
 	}
@@ -182,6 +184,9 @@ p{
 }
 
 }
+
+
+
 /*HEADER*/
 
 
@@ -235,10 +240,11 @@ header {
 		color: white;
 		box-shadow: inset -13px -11px 21px 14px rgba(174,95,219,0.6);
 			&:hover{
+			@include box-shadow;
 			transform: scale(1.01);
 			background-color: $color2;
 			box-shadow: inset 21px 14px 21px 14px rgba(174,95,219,0.6);
-			box-shadow: 10px 10px 10px 10 px black;
+			
 			}
 			}
 
@@ -377,7 +383,7 @@ header {
 					}
 			&:hover > svg:nth-child(2){
 						opacity: 1;
-						color: $mainColor;
+						color: $color2;
 						z-index: 99;
 						
 					}
@@ -624,11 +630,50 @@ nav {
 				}
 			}
 
-
-
-
 		}
 	}
 }
 
 
+
+@media (min-width: $breakpointmobile){
+
+	body{
+		display: flex;
+		flex-wrap: wrap;
+		& header{
+		flex-basis: 100%;
+		}
+
+		& main{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+			& .chapeau{
+			flex-basis: 40%;
+			margin: 15px;
+			}
+			& .fonctionnement{
+			flex-basis: 50%;
+			}
+
+		}
+		& footer{
+			flex-basis: 100%;
+		}
+}
+
+}
+
+@media (min-width: $breakpointtablet){
+	main{
+		display: flex;
+		flex-wrap: wrap;
+		&.chapeau{
+			flex-basis: 30%;
+		}
+		& .fonctionemment{
+			flex-basis: 30%;
+		}
+	}
+}
