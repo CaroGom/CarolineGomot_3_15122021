@@ -269,6 +269,9 @@ button:hover {
   flex-basis: 100%;
   justify-content: space-between;
   padding: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .restaurant .restaurant__bottomtext .heartbutton {
   position: relative;
@@ -354,13 +357,7 @@ nav li .nav__icon {
   padding-left: 15px;
 }
 
-.entete {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-.entete img {
+.entete_img img {
   max-height: 450px;
   width: 100%;
   object-fit: cover;
@@ -375,7 +372,13 @@ nav li .nav__icon {
   z-index: 10;
   padding-bottom: 15px;
 }
-.restaurantmenu h1 {
+.restaurantmenu .entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.restaurantmenu .entete h1 {
   font-family: "Shrikhand", sans serif;
   font-size: 1.8em;
   padding-left: 15px;
@@ -448,19 +451,26 @@ nav li .nav__icon {
   background-color: white;
   border-radius: 10px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   padding: 15px;
   margin-bottom: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.restaurantmenu fieldset label .plats_txt {
+  display: flex;
+  flex-wrap: wrap;
 }
 .restaurantmenu fieldset label .titreplat {
   font-weight: bold;
   font-size: 1.1em;
   flex-basis: 100%;
+  display: inline-block;
 }
 .restaurantmenu fieldset label .remarquesplat {
-  padding-top: 5px;
+  display: inline-block;
 }
 .restaurantmenu fieldset label .blocprix {
   display: flex;
@@ -484,8 +494,16 @@ nav li .nav__icon {
 .restaurantmenu fieldset label .load2 {
   animation-delay: 0.5s;
 }
-.restaurantmenu fieldset label:hover .blocprix {
-  margin-top: -15px;
+.restaurantmenu fieldset label:hover label {
+  padding-bottom: 0;
+}
+.restaurantmenu fieldset label:hover .plats_txt .remarquesplat {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  border: transparent solid 1px;
 }
 .restaurantmenu fieldset label:hover .blocprix .prix {
   margin-right: 25px;
@@ -495,7 +513,7 @@ nav li .nav__icon {
   transform-origin: 50% 0%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 100px;
+  width: 90px;
   margin: -17px;
   padding: 27px;
   padding-left: 45px;
@@ -517,6 +535,7 @@ nav li .nav__icon {
     flex-basis: 100%;
   }
   body main {
+    flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -528,11 +547,23 @@ nav li .nav__icon {
   body main .fonctionnement {
     flex-basis: 50%;
   }
+  body main .entete_img img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  body main .restaurantmenu {
+    flex-basis: 100%;
+  }
   body footer {
     flex-basis: 100%;
   }
 }
 @media (min-width: 768px) {
+  body {
+    display: normal;
+  }
+
   main {
     display: flex;
     flex-wrap: wrap;

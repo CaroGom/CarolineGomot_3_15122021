@@ -353,6 +353,9 @@ header {
 			flex-basis: 100%;
 			justify-content: space-between;
 			padding: 15px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		& .heartbutton{
 			position: relative;
 			padding: 5px;
@@ -456,20 +459,18 @@ nav {
 	flex-wrap: wrap;
 	align-content: center;
 	padding-left: 15px;
+
 }
 
-.entete{
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
+.entete_img{
 	& img{
-		max-height: 450px;
-		width: 100%;
-		object-fit: cover;
+	max-height: 450px;
+	width: 100%;
+	object-fit: cover;
 	}
-
 }
+
+
 
 .restaurantmenu{
 	
@@ -480,13 +481,19 @@ nav {
 	position: relative;
 	z-index: 10;
 	padding-bottom: 15px;
-
-	& h1{
+	& .entete {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	
+		& h1{
 		font-family: 'Shrikhand', sans serif;
 		font-size: 1.8em;
 		padding-left: 15px;
 		display: flex;
 		justify-content: space-between;
+		}
 	}
 	& .heartbutton{
 			position: relative;
@@ -564,19 +571,26 @@ nav {
 			background-color: white;
 			border-radius: 10px;
 			display: flex;
-			flex-wrap: wrap;
 			justify-content: space-between;
 			width: 100%;
 			padding: 15px;
 			margin-bottom: 25px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			& .plats_txt{
+			display: flex;
+			flex-wrap: wrap;
+			}
 
 			& .titreplat{
 				font-weight: bold;
 				font-size: 1.1em;
 				flex-basis: 100%;
+				display: inline-block;
 			}
 			& .remarquesplat{
-				padding-top: 5px;
+				display: inline-block;
 			}
 
 			& .blocprix{
@@ -603,26 +617,38 @@ nav {
 				animation-delay: .5s;
 			}
 			&:hover{
-				& .blocprix{
-				margin-top: -15px;
-					& .prix{
-					margin-right: 25px;
+				label{
+					padding-bottom: 0;
+				}
+					& .plats_txt{
+						& .remarquesplat{
+						flex: 1;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						max-width: 200px;
+						border: transparent solid 1px;
+						}
 					}
-					& .checkmark{
-					animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
-					transform-origin: 50% 0%;
-					border-top-right-radius: 10px;
-					border-bottom-right-radius: 10px;
-					width: 100px;
-					margin: -17px;
-					padding: 27px;
-					padding-left: 45px;
-					background-color: $color3;
-						& svg{
-						width: auto;
-						margin: auto;
-						color: white;
-						transform: rotate(-1turn);
+					& .blocprix{
+						& .prix{
+						margin-right: 25px;
+						}
+						& .checkmark{
+						animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
+						transform-origin: 50% 0%;
+						border-top-right-radius: 10px;
+						border-bottom-right-radius: 10px;
+						width: 90px;
+						margin: -17px;
+						padding: 27px;
+						padding-left: 45px;
+						background-color: $color3;
+							& svg{
+							width: auto;
+							margin: auto;
+							color: white;
+							transform: rotate(-1turn);
 
 						}
 
@@ -646,6 +672,7 @@ nav {
 		}
 
 		& main{
+		flex-basis: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
@@ -655,6 +682,15 @@ nav {
 			}
 			& .fonctionnement{
 			flex-basis: 50%;
+			}
+			& .entete_img img{
+			max-height: 100%;
+			width: 100%;
+			object-fit: cover;
+			}
+			& .restaurantmenu{
+				flex-basis: 100%;
+
 			}
 
 		}
@@ -666,6 +702,9 @@ nav {
 }
 
 @media (min-width: $breakpointtablet){
+	body{
+		display: normal;
+	}
 	main{
 		display: flex;
 		flex-wrap: wrap;
@@ -675,5 +714,7 @@ nav {
 		& .fonctionemment{
 			flex-basis: 30%;
 		}
+		
+
 	}
 }
