@@ -374,7 +374,7 @@ header {
 				& :nth-child(2){
 				z-index: 1;
 				opacity: 0;
-				color: white;
+				color: $color2;
 				font-size: 1em;
 				display: inline;
 				
@@ -386,7 +386,7 @@ header {
 					}
 			&:hover > svg:nth-child(2){
 						opacity: 1;
-						transition: 1s;
+						transition: 2s linear;
 						color: $color2;
 						z-index: 99;
 						
