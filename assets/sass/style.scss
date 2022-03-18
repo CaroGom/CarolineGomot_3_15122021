@@ -238,6 +238,7 @@ header {
 			transform: scale(1.01);
 			background-color: $color2;
 			box-shadow: inset 21px 14px 21px 14px rgba(174,95,219,0.6);
+			box-shadow: 10px 10px 10px 10 px black;
 			}
 			}
 
@@ -523,18 +524,7 @@ nav {
 					color: $mainColor;
 					z-index: 99;
 				}
-			&:visited > svg:nth-child(2){
-						opacity: 1;
-						background-color: #f3ec78;
-   						background-image: linear-gradient(45deg, #f3ec78, #af4261);
-   						background-size: 100%;
-    					background-clip: text;
-   						color: transparent; 
-    					-moz-text-fill-color: transparent;
-						z-index: 99;
-					
-					
-					}
+
 
 		}
 	
@@ -613,7 +603,8 @@ nav {
 					margin-right: 25px;
 					}
 					& .checkmark{
-					transform: translateX(0px);
+					animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
+					transform-origin: 50% 0%;
 					border-top-right-radius: 10px;
 					border-bottom-right-radius: 10px;
 					width: 100px;
@@ -625,7 +616,7 @@ nav {
 						width: auto;
 						margin: auto;
 						color: white;
-						
+						transform: rotate(-1turn);
 
 						}
 
@@ -633,32 +624,7 @@ nav {
 				}
 			}
 
-			&:active{
-				padding-left: 0;
 
-				& div:first-child{
-					opacity: 0;
-					width: 0;
-					height: 0;
-					& p{
-						width: 0;
-						margin: 0;
-					}
-				}
-				& .prix{
-					opacity: 0;
-					width: 0;
-					height: 0;
-				}
-				& .checkmark{
-					transform: translateX(4);
-					background-color: $color3;
-					width: 450px;
-					& svg{
-						transform: rotate(-1turn);
-					}
-				}
-			}
 
 
 		}

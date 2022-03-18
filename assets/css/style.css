@@ -169,6 +169,7 @@ button:hover {
   transform: scale(1.01);
   background-color: #ff79da;
   box-shadow: inset 21px 14px 21px 14px rgba(174, 95, 219, 0.6);
+  box-shadow: 10px 10px 10px 10 px black;
 }
 
 /*FONCTIONALITES*/
@@ -419,16 +420,6 @@ nav li .nav__icon {
   color: #9356dc;
   z-index: 99;
 }
-.restaurantmenu .heartbutton:visited > svg:nth-child(2) {
-  opacity: 1;
-  background-color: #f3ec78;
-  background-image: linear-gradient(45deg, #f3ec78, #af4261);
-  background-size: 100%;
-  background-clip: text;
-  color: transparent;
-  -moz-text-fill-color: transparent;
-  z-index: 99;
-}
 .restaurantmenu h2 {
   text-transform: uppercase;
   font-size: 1em;
@@ -500,7 +491,8 @@ nav li .nav__icon {
   margin-right: 25px;
 }
 .restaurantmenu fieldset label:hover .blocprix .checkmark {
-  transform: translateX(0px);
+  animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
+  transform-origin: 50% 0%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   width: 100px;
@@ -513,30 +505,6 @@ nav li .nav__icon {
   width: auto;
   margin: auto;
   color: white;
-}
-.restaurantmenu fieldset label:active {
-  padding-left: 0;
-}
-.restaurantmenu fieldset label:active div:first-child {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.restaurantmenu fieldset label:active div:first-child p {
-  width: 0;
-  margin: 0;
-}
-.restaurantmenu fieldset label:active .prix {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.restaurantmenu fieldset label:active .checkmark {
-  transform: translateX(4);
-  background-color: #99e2d0;
-  width: 450px;
-}
-.restaurantmenu fieldset label:active .checkmark svg {
   transform: rotate(-1turn);
 }
 
