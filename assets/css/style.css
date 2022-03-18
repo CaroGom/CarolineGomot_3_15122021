@@ -300,6 +300,7 @@ button:hover {
 }
 .restaurant .restaurant__bottomtext .heartbutton:hover > svg:nth-child(2) {
   opacity: 1;
+  transition: 1s;
   color: #ff79da;
   z-index: 99;
 }
@@ -496,6 +497,7 @@ nav li .nav__icon {
 }
 .restaurantmenu fieldset label:hover label {
   padding-bottom: 0;
+  transition: 0s;
 }
 .restaurantmenu fieldset label:hover .plats_txt .remarquesplat {
   flex: 1;
@@ -516,7 +518,7 @@ nav li .nav__icon {
   width: 90px;
   margin: -17px;
   padding: 27px;
-  padding-left: 45px;
+  padding-left: 38px;
   background-color: #99e2d0;
 }
 .restaurantmenu fieldset label:hover .blocprix .checkmark svg {
@@ -524,6 +526,7 @@ nav li .nav__icon {
   margin: auto;
   color: white;
   transform: rotate(-1turn);
+  transition: 2s;
 }
 
 @media (min-width: 640px) {

@@ -386,6 +386,7 @@ header {
 					}
 			&:hover > svg:nth-child(2){
 						opacity: 1;
+						transition: 1s;
 						color: $color2;
 						z-index: 99;
 						
@@ -619,6 +620,7 @@ nav {
 			&:hover{
 				label{
 					padding-bottom: 0;
+					transition: 0s;
 				}
 					& .plats_txt{
 						& .remarquesplat{
@@ -642,14 +644,14 @@ nav {
 						width: 90px;
 						margin: -17px;
 						padding: 27px;
-						padding-left: 45px;
+						padding-left: 38px;
 						background-color: $color3;
 							& svg{
 							width: auto;
 							margin: auto;
 							color: white;
 							transform: rotate(-1turn);
-
+							transition: 2s;
 						}
 
 					}
