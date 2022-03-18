@@ -21,14 +21,6 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
     height: 0;
     visibility: hidden;
   }
-  @keyframes slide-out-left {
-    0% {
-      transform: translateY(0, 0);
-    }
-    100% {
-      transform: translateY(-100%, 0);
-    }
-  }
 }
 /*FAIRE UN MIXIN GREY BACKGROUND ?*/
 * {
@@ -95,7 +87,7 @@ p {
   text-align: center;
   font-family: "Shrikhand";
   font-size: 5em;
-  padding: 0 50 50px;
+  padding: 0 50px 50px;
   margin: auto;
 }
 .bodyanim p .load1 {
@@ -563,10 +555,6 @@ nav li .nav__icon {
   }
 }
 @media (min-width: 768px) {
-  body {
-    display: normal;
-  }
-
   main {
     display: flex;
     flex-wrap: wrap;
