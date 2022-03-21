@@ -7,9 +7,11 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 @keyframes restaurantappear {
   0% {
     opacity: 0;
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
+    transform: translateY(0px);
   }
 }
 @keyframes loader {
@@ -291,15 +293,8 @@ button:hover {
 }
 .restaurant .restaurant__bottomtext .heartbutton:hover > svg:nth-child(2) {
   opacity: 1;
-  transition: 2s linear;
+  transition: 1s linear;
   color: #ff79da;
-  z-index: 99;
-}
-.restaurant .restaurant__bottomtext .heartbutton:active > svg:nth-child(2) {
-  opacity: 1;
-  background: linear-gradient(0deg, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   z-index: 99;
 }
 
@@ -403,7 +398,7 @@ nav li .nav__icon {
 }
 .restaurantmenu .heartbutton:hover > svg:nth-child(2) {
   opacity: 1;
-  transition: 2s linear;
+  transition: 1s linear;
   color: #ff79da;
   z-index: 99;
 }
@@ -425,35 +420,50 @@ nav li .nav__icon {
 }
 .restaurantmenu fieldset {
   border-style: hidden;
+  width: 100%;
+  animation: restaurantappear 4s ease-in-out forwards;
 }
 .restaurantmenu fieldset input {
   display: contents;
 }
 .restaurantmenu fieldset label {
-  animation: restaurantappear 4000ms ease-in-out forwards;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
   background-color: white;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  max-width: 100%;
   padding: 15px;
   margin-bottom: 25px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  box-sizing: border-box;
+  animation: restaurantappear 4s ease-in-out forwards;
+}
+.restaurantmenu fieldset label:first-of-type {
+  animation-delay: 1s;
+  animation: restaurantappear 1s ease-in-out forwards;
+}
+.restaurantmenu fieldset label:nth-of-type(2) {
+  animation-delay: 2s;
+  animation: restaurantappear 2s ease-in-out forwards;
+}
+.restaurantmenu fieldset label:nth-of-type(3) {
+  animation-delay: 3s;
+  animation: restaurantappear 3s ease-in-out forwards;
 }
 .restaurantmenu fieldset label .plats_txt {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-.restaurantmenu fieldset label .titreplat {
+.restaurantmenu fieldset label .plats_txt .titreplat {
   font-weight: bold;
   font-size: 1.1em;
   flex-basis: 100%;
   display: inline-block;
 }
-.restaurantmenu fieldset label .remarquesplat {
+.restaurantmenu fieldset label .plats_txt .remarquesplat {
   display: inline-block;
 }
 .restaurantmenu fieldset label .blocprix {
@@ -461,34 +471,30 @@ nav li .nav__icon {
   justify-content: end;
   align-items: center;
 }
-.restaurantmenu fieldset label .blocprix .prix {
+.restaurantmenu fieldset label .blocprix .intermediaire {
+  display: flex;
+}
+.restaurantmenu fieldset label .blocprix .intermediaire .prix {
   font-weight: bold;
 }
-.restaurantmenu fieldset label .blocprix .checkmark {
+.restaurantmenu fieldset label .blocprix .intermediaire .checkmark {
   transform-origin: 50% 0%;
   transform: translateX(0);
   width: 0;
 }
-.restaurantmenu fieldset label .blocprix .checkmark svg {
+.restaurantmenu fieldset label .blocprix .intermediaire .checkmark svg {
   width: 0;
-}
-.restaurantmenu fieldset label .load1 {
-  animation-delay: 1s;
-}
-.restaurantmenu fieldset label .load2 {
-  animation-delay: 0.5s;
 }
 .restaurantmenu fieldset label:hover label {
   padding-bottom: 0;
   transition: 0s;
 }
-.restaurantmenu fieldset label:hover .plats_txt .remarquesplat {
+.restaurantmenu fieldset label:hover .plats_txt {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 200px;
-  border: transparent solid 1px;
 }
 .restaurantmenu fieldset label:hover .blocprix .prix {
   margin-right: 25px;
@@ -496,6 +502,7 @@ nav li .nav__icon {
 .restaurantmenu fieldset label:hover .blocprix .checkmark {
   animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
   transform-origin: 50% 0%;
+  box-sizing: border-box;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   width: 90px;

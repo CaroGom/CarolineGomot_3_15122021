@@ -60,10 +60,12 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
  
 	0%{
 		opacity: 0;
+		transform: translateY(50px);
 	}
 
 	100%{
 		opacity: 1;
+		transform: translateY(0px);
 	}
  } 
 
@@ -375,19 +377,11 @@ header {
 					}
 			&:hover > svg:nth-child(2){
 						opacity: 1;
-						transition: 2s linear;
+						transition: 1s linear;
 						color: $color2;
 						z-index: 99;
 						
 					}
-				&:active > svg:nth-child(2){
-					opacity: 1;
-					background: linear-gradient(0deg,#9356DC,#FF79DA);
-    				-webkit-background-clip: text;
-    				-webkit-text-fill-color: transparent;
-
-					z-index: 99;
-					}	
 
 				}
 
@@ -514,7 +508,7 @@ nav {
 
 		&:hover > svg:nth-child(2){
 			opacity: 1;
-			transition: 2s linear;
+			transition: 1s linear;
 			color: $color2;
 			z-index: 99;
 						
@@ -544,43 +538,63 @@ nav {
 	
 	& fieldset{
 		border-style: hidden;
-		
+		width: 100%;
+		animation: restaurantappear 4s ease-in-out forwards;
 		& input{
 			display: contents;
 		}
 		& label{
-			animation: restaurantappear 4000ms ease-in-out forwards;
 			@include box-shadow;
 			background-color: white;
 			border-radius: 10px;
 			display: flex;
 			justify-content: space-between;
-			width: 100%;
+			max-width: 100%;
 			padding: 15px;
 			margin-bottom: 25px;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
-			& .plats_txt{
-			display: flex;
-			flex-wrap: wrap;
+			box-sizing: border-box;
+			animation: restaurantappear 4s ease-in-out forwards;
+		&:first-of-type{
+			animation-delay: 1s;
+			animation: restaurantappear 1s ease-in-out forwards;
 			}
+		&:nth-of-type(2){
+			animation-delay: 2s;
+			animation: restaurantappear 2s ease-in-out forwards;
+			}
+		&:nth-of-type(3){
+			animation-delay: 3s;
+			animation: restaurantappear 3s ease-in-out forwards;
+				} 
+			& .plats_txt{
 
-			& .titreplat{
+			display: flex;
+			flex-direction: column;
+				& .titreplat{
 				font-weight: bold;
 				font-size: 1.1em;
 				flex-basis: 100%;
 				display: inline-block;
-			}
-			& .remarquesplat{
+				}
+				& .remarquesplat{
 				display: inline-block;
+				}
+		
 			}
+
+			
 
 			& .blocprix{
 				display: flex;
 				justify-content: end;
 				align-items: center;
-				& .prix{
+				
+				& .intermediaire{
+					display: flex;
+					& .prix{
 				font-weight: bold;
 				}
 				& .checkmark{
@@ -591,28 +605,25 @@ nav {
 					width: 0;
 					}
 				}
+				}
+
+
 			}
 
-			& .load1{
-				animation-delay: 1s;
-			}
-			& .load2{
-				animation-delay: .5s;
-			}
 			&:hover{
 				label{
 					padding-bottom: 0;
 					transition: 0s;
 				}
-					& .plats_txt{
-						& .remarquesplat{
-						flex: 1;
-						white-space: nowrap;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						max-width: 200px;
-						border: transparent solid 1px;
-						}
+		& .plats_txt{
+						
+				flex: 1;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 200px;
+
+						
 					}
 					& .blocprix{
 						& .prix{
@@ -621,6 +632,7 @@ nav {
 						& .checkmark{
 						animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
 						transform-origin: 50% 0%;
+						box-sizing: border-box;
 						border-top-right-radius: 10px;
 						border-bottom-right-radius: 10px;
 						width: 90px;
