@@ -158,10 +158,9 @@ button {
   box-shadow: inset -13px -11px 21px 14px rgba(174, 95, 219, 0.6);
 }
 button:hover {
-  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
   transform: scale(1.01);
   background-color: #ff79da;
-  box-shadow: inset 21px 14px 21px 14px rgba(174, 95, 219, 0.6);
+  box-shadow: 5px 5px 5px #000, inset 21px 14px 21px 14px rgba(174, 95, 219, 0.6);
 }
 
 /*FONCTIONALITES*/
@@ -390,12 +389,12 @@ nav li .nav__icon {
   top: 0;
   left: 0;
 }
-.restaurantmenu .heartbutton :first-child {
+.restaurantmenu .heartbutton svg :first-child {
   z-index: 99;
   font-weight: bold;
   display: inline-block;
 }
-.restaurantmenu .heartbutton :nth-child(2) {
+.restaurantmenu .heartbutton svg:nth-child(2) {
   z-index: 1;
   opacity: 0;
   color: white;
@@ -406,11 +405,6 @@ nav li .nav__icon {
   opacity: 1;
   transition: 2s linear;
   color: #ff79da;
-  z-index: 99;
-}
-.restaurantmenu .heartbutton:active > svg:nth-child(2) {
-  opacity: 1;
-  color: #9356dc;
   z-index: 99;
 }
 .restaurantmenu h2 {
