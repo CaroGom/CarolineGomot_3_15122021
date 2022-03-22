@@ -69,6 +69,18 @@ C:\Users\Dumbledore\Desktop\OPC\MODULE-3\CarolineGomot_3_15122021\assets\sass>sa
 	}
  } 
 
+@keyframes restaurantslideleft {
+ 
+	0%{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+ } 
 
 @keyframes loader {
   0% {
@@ -643,6 +655,7 @@ nav {
 						margin-right: 25px;
 						}
 						& .checkmark{
+						animation: restaurantslideleft 0.5s ease-in-out forwards;
 						display: flex;
 						box-sizing: border-box;
 						border-top-right-radius: 10px;
