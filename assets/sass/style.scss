@@ -533,7 +533,7 @@ nav {
 		}
 	& .checkmark{
 		position: relative;
-		background-color: $color3;
+		color: white;
 	}
 	
 	& fieldset{
@@ -542,6 +542,8 @@ nav {
 		animation: restaurantappear 4s ease-in-out forwards;
 		& input{
 			display: contents;
+			min-width: 100%;
+			max-width: 100%;
 		}
 		& label{
 			@include box-shadow;
@@ -570,39 +572,47 @@ nav {
 			animation: restaurantappear 3s ease-in-out forwards;
 				} 
 			& .plats_txt{
-
+			width: 100%;
 			display: flex;
 			flex-direction: column;
+
 				& .titreplat{
 				font-weight: bold;
 				font-size: 1.1em;
 				flex-basis: 100%;
 				display: inline-block;
+				white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 				}
 				& .remarquesplat{
 				display: inline-block;
+				white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 				}
 		
 			}
-
-			
-
-			& .blocprix{
+			& .intermediaire{
+					position: relative;
+					display: inline-block;
+					width: 100%;
+				& .blocprix{
 				display: flex;
 				justify-content: end;
-				align-items: center;
+								
 				
-				& .intermediaire{
-					display: flex;
-					& .prix{
+				& .prix{
 				font-weight: bold;
 				}
 				& .checkmark{
 				transform-origin: 50% 0%;
 				transform: translateX(0);
 				width: 0;
+				color: white;
 					& svg{
 					width: 0;
+					color: white;
 					}
 				}
 				}
@@ -612,10 +622,13 @@ nav {
 
 			&:hover{
 				label{
-					padding-bottom: 0;
-					transition: 0s;
+					width: 100%;
+					padding-right:0;
 				}
-		& .plats_txt{
+				& .intermediaire{
+					width: 45%;
+				}
+				& .plats_txt{
 						
 				flex: 1;
 				white-space: nowrap;
@@ -630,20 +643,22 @@ nav {
 						margin-right: 25px;
 						}
 						& .checkmark{
-						animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
-						transform-origin: 50% 0%;
+						display: flex;
 						box-sizing: border-box;
 						border-top-right-radius: 10px;
 						border-bottom-right-radius: 10px;
-						width: 90px;
+						width: 40%;
 						margin: -17px;
-						padding: 27px;
-						padding-left: 38px;
+						margin-bottom: -33px;
+						
 						background-color: $color3;
+							& .checkmark__hover{
+								margin: auto;
+							}
 							& svg{
 							width: auto;
 							margin: auto;
-							color: white;
+							
 							transform: rotate(-1turn);
 							transition: 2s;
 						}

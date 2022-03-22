@@ -416,7 +416,7 @@ nav li .nav__icon {
 }
 .restaurantmenu .checkmark {
   position: relative;
-  background-color: #99e2d0;
+  color: white;
 }
 .restaurantmenu fieldset {
   border-style: hidden;
@@ -425,6 +425,8 @@ nav li .nav__icon {
 }
 .restaurantmenu fieldset input {
   display: contents;
+  min-width: 100%;
+  max-width: 100%;
 }
 .restaurantmenu fieldset label {
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
@@ -454,6 +456,7 @@ nav li .nav__icon {
   animation: restaurantappear 3s ease-in-out forwards;
 }
 .restaurantmenu fieldset label .plats_txt {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -462,32 +465,44 @@ nav li .nav__icon {
   font-size: 1.1em;
   flex-basis: 100%;
   display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .restaurantmenu fieldset label .plats_txt .remarquesplat {
   display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.restaurantmenu fieldset label .blocprix {
+.restaurantmenu fieldset label .intermediaire {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.restaurantmenu fieldset label .intermediaire .blocprix {
   display: flex;
   justify-content: end;
-  align-items: center;
 }
-.restaurantmenu fieldset label .blocprix .intermediaire {
-  display: flex;
-}
-.restaurantmenu fieldset label .blocprix .intermediaire .prix {
+.restaurantmenu fieldset label .intermediaire .blocprix .prix {
   font-weight: bold;
 }
-.restaurantmenu fieldset label .blocprix .intermediaire .checkmark {
+.restaurantmenu fieldset label .intermediaire .blocprix .checkmark {
   transform-origin: 50% 0%;
   transform: translateX(0);
   width: 0;
+  color: white;
 }
-.restaurantmenu fieldset label .blocprix .intermediaire .checkmark svg {
+.restaurantmenu fieldset label .intermediaire .blocprix .checkmark svg {
   width: 0;
+  color: white;
 }
 .restaurantmenu fieldset label:hover label {
-  padding-bottom: 0;
-  transition: 0s;
+  width: 100%;
+  padding-right: 0;
+}
+.restaurantmenu fieldset label:hover .intermediaire {
+  width: 45%;
 }
 .restaurantmenu fieldset label:hover .plats_txt {
   flex: 1;
@@ -500,21 +515,21 @@ nav li .nav__icon {
   margin-right: 25px;
 }
 .restaurantmenu fieldset label:hover .blocprix .checkmark {
-  animation: slide-out-left 1000ms 4000ms ease-in-out forwards;
-  transform-origin: 50% 0%;
+  display: flex;
   box-sizing: border-box;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 90px;
+  width: 40%;
   margin: -17px;
-  padding: 27px;
-  padding-left: 38px;
+  margin-bottom: -33px;
   background-color: #99e2d0;
+}
+.restaurantmenu fieldset label:hover .blocprix .checkmark .checkmark__hover {
+  margin: auto;
 }
 .restaurantmenu fieldset label:hover .blocprix .checkmark svg {
   width: auto;
   margin: auto;
-  color: white;
   transform: rotate(-1turn);
   transition: 2s;
 }
